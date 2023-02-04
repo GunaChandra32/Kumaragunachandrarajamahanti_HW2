@@ -32,3 +32,14 @@ If it can't find the first character, it appends the remaining part of input_wor
 After finding the index of the first character, the function checks if the next character is equal to second_char. If it is, the function appends the string formed by concatenating first_char and second_char to output_word and increments index by 2.
 If the next character is not equal to second_char, the function appends only first_char to output_word and increments index by 1.
 Finally, after the loop is done, the function returns the output_word list.
+This bpe function performs the BPE (Byte-Pair Encoding) algorithm.
+The function takes an iteration number as input and outputs True or False.
+The function starts by printing a separator line with the iteration number. Then, the function accesses the global variables splitted_data, vocab, and corpous_data.
+The BPE algorithm works by finding the character pair that appears most frequently in the input text and then merging that pair into a single unit in the vocabulary. This process is repeated until there are no more pairs left to merge.
+The first step of the algorithm is to create a dictionary pairs which stores the frequency of each character pair. The function iterates over each word in splitted_data and for each word, it loops through each character pair in the word. It then increments the frequency count of the character pair in the pairs dictionary.
+If the pairs dictionary is not empty, the function continues with the next steps of the algorithm.
+The function then finds the pair with the maximum frequency by using the max function with a key argument of pairs.get. This means that the max function will return the pair with the highest frequency count.
+The function then adds this pair to the corpous_data dictionary with the frequency count as its value and adds the pair (merged as a single unit) to the vocabs list.
+The function then updates the splitted_data list by replacing the frequent character pair with the merged pair. This is done by looping over each word in the splitted_data list, checking if the length of the word is greater than 1. If the length is greater than 1, the function loops through each character pair in the word and replaces the character pair with the merged pair if it is equal to the frequent character pair.
+Finally, the function prints the updated vocabs list and returns True.
+If the pairs dictionary is empty, the function returns False.
