@@ -42,4 +42,4 @@ The function then finds the pair with the maximum frequency by using the max fun
 The function then adds this pair to the corpous_data dictionary with the frequency count as its value and adds the pair (merged as a single unit) to the vocabs list.
 The function then updates the splitted_data list by replacing the frequent character pair with the merged pair. This is done by looping over each word in the splitted_data list, checking if the length of the word is greater than 1. If the length is greater than 1, the function loops through each character pair in the word and replaces the character pair with the merged pair if it is equal to the frequent character pair.
 Finally, the function prints the updated vocabs list and returns True.
-If the pairs dictionary is empty, the function returns False.
+If the pairs dictionary is empty, the function returns False
